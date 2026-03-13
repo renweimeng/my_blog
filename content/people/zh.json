@@ -11,40 +11,62 @@
       "start": "2023",
       "end": "2027",
       "description": "本科阶段系统学习算法、计算机视觉与机器学习，并参与多个科研与工程实践项目。",
-      "achievements": ["专业核心课程优秀", "科研训练项目负责人", "校级创新项目立项"],
+      "achievements": ["年级第一", "国家级大学生创新创业大赛负责人", "课题组领导人"],
       "detail": {
         "schoolIntro": "安徽大学是国家双一流建设高校，强调创新实践与跨学科融合，提供了开放的科研与工程学习环境。",
         "majorIntro": "数字媒体技术专业聚焦计算机图形学、人机交互、智能媒体与工程实现，注重创意能力与技术能力并重。",
+        "metrics": {
+          "gpa": "92.24/100",
+          "rank": "1/100"
+        },
         "curriculum": {
           "math": ["高等数学", "线性代数", "概率论与数理统计", "离散数学"],
-          "csFundamentals": ["数据结构", "操作系统", "计算机网络", "数据库系统", "计算机组成原理"],
-          "advanced": ["机器学习", "深度学习", "计算机视觉", "自然语言处理", "多媒体技术"],
-          "general": ["大学英语", "学术写作", "创新创业", "心理健康教育"]
+          "csFundamentals": ["数据结构", "操作系统", "计算机网络", "数据库系统", "计算机组成原理", "C/Java/Python"],
+          "advanced": ["机器学习", "深度学习", "计算机视觉", "自然语言处理", "多媒体技术", "计算机安全", "人机交互", "计算机图形学"],
+          "general": ["雅思", "微观/宏观经济学", "心理学", "世界中世纪史"]
         },
-        "awards": ["校级奖学金", "互联网+创新创业比赛校级奖", "优秀学生干部"],
-        "volunteering": ["迎新志愿服务", "社区科普活动讲解", "校园技术分享志愿讲师"]
+        "awards": ["国家奖学金", "全国大学生数学建模竞赛省级一等奖", "美国大学生数学建模竞赛H奖", "蓝桥杯JAVA省级二等奖"],
+        "volunteering": ["12355青少年服务台志愿服务", "安徽美善公益基金会社区推广志愿活动"]
       }
     }
   ],
   "internships": [
     {
-      "company": "某科技公司 AI 部门",
-      "role": "算法工程实习生",
+      "company": "太原龙为电子科技有限公司",
+      "role": "Java 后端开发实习生",
       "start": "2025-07",
       "end": "2025-09",
-      "location": "合肥",
-      "summary": "参与视觉识别与智能检索项目，负责数据处理、模型训练与效果评估。",
+      "location": "太原",
+      "summary": "参与后端接口开发与数据库管理，协助设计并实现稳定的 RESTful API。",
       "detail": {
-        "companyIntro": "团队聚焦 AIGC 与智能交互产品，业务覆盖企业知识系统与多模态应用。",
-        "roleIntro": "负责模型实验设计、训练 pipeline 维护、在线效果监控和报告撰写。",
+        "companyIntro": "公司聚焦电子科技与企业级软件系统建设，面向业务场景提供稳定的工程化解决方案。",
+        "roleIntro": "作为 Java 后端开发实习生，参与 Spring Boot 与 MyBatis 架构下的接口开发、数据库管理以及接口联调工作。",
         "highlights": [
-          "构建数据清洗与标注流程，提升训练数据质量。",
-          "优化特征检索链路，提升线上召回效率。",
-          "完成多轮模型对比实验并产出评估文档。"
+          "使用 Spring Boot 与 MyBatis 框架开发后端接口并进行数据库管理。",
+          "与前端团队协作设计并实现 RESTful API，提高系统数据传输效率与稳定性。"
         ],
-        "tech": ["Python", "PyTorch", "OpenCV", "SQL", "Docker"],
-        "awards": ["实习优秀个人", "最佳技术分享奖"],
-        "volunteering": ["公司技术公开课志愿讲师", "高校 AI 社区共建活动"]
+        "tech": ["Java", "Spring Boot", "MyBatis", "MySQL", "RESTful API"],
+        "awards": [],
+        "volunteering": []
+      }
+    },
+    {
+      "company": "国网山西省电力公司",
+      "role": "系统运维实习生",
+      "start": "2024-07",
+      "end": "2024-09",
+      "location": "山西",
+      "summary": "参与电力运行系统平台的日常运维与运行数据分析，支持关键系统稳定运行。",
+      "detail": {
+        "companyIntro": "国网山西省电力公司承担区域电力运行与保障任务，业务系统对稳定性、持续可用性和数据支撑要求很高。",
+        "roleIntro": "作为系统运维实习生，参与业务平台的日常巡检、运行保障与数据分析工作，协助支持系统优化。",
+        "highlights": [
+          "参与电力运行系统平台的日常运维，保障关键系统的稳定运行。",
+          "对运行数据进行分析并生成月度报告，为系统优化提供数据支持。"
+        ],
+        "tech": ["System Operations", "Monitoring", "Data Analysis", "Reporting"],
+        "awards": [],
+        "volunteering": []
       }
     }
   ],
@@ -52,22 +74,44 @@
     "title": "音乐人",
     "intro": "我是一个鼓手，平时也弹吉他、钢琴，也会作曲。",
     "instruments": ["Drums", "Guitar", "Piano", "Composition", "Music Production"],
-    "bandPhotos": ["/music/band-1.svg", "/music/band-2.svg", "/music/band-3.svg"],
-    "track": "/music/demo-track.wav"
+    "bandPhotos": ["/music/band.jpg"],
+    "track": "/music/Funk.mp3"
   },
   "timeline": [
     {
-      "date": "2025",
-      "title": "Research Lead, AI Lab",
-      "description": "聚焦检索增强与可解释性方向，带领项目从原型走向产品。",
-      "links": [
-        { "label": "Lab", "url": "https://example.com" }
-      ]
+      "date": "2023-09",
+      "title": "数理基础与编程训练",
+      "description": "系统构建高等数学、线性代数、概率统计等数理基础，并同步完成编程入门训练，建立计算思维与工程学习框架。"
     },
     {
-      "date": "2023",
-      "title": "M.S. in Computer Science",
-      "description": "研究方向：知识增强、对话系统与系统工程。"
+      "date": "2024-03",
+      "title": "计算机进阶课程与全栈能力启蒙",
+      "description": "深入学习数据结构、计算机系统等核心课程，并开始系统掌握 Java 后端开发与 HTML / CSS / JavaScript 前端技术，形成完整的软件开发认知。"
+    },
+    {
+      "date": "2024-09",
+      "title": "进入医学影像与计算机视觉研究",
+      "description": "加入课题组，围绕“冠状脉 CTA 伪影降噪”开展研究，聚焦医学影像处理、视觉建模与实际科研问题的结合。"
+    },
+    {
+      "date": "2024-12",
+      "title": "软件漏洞检测方向探索",
+      "description": "转向软件安全研究，围绕漏洞检测算法开展改进工作，关注代码表示、缺陷模式建模与检测性能优化。"
+    },
+    {
+      "date": "2025-03",
+      "title": "LLM 系统与 Agent 架构深入研究",
+      "description": "深入研究大语言模型架构与应用系统设计，重点关注 RAG、推理链优化、Agent 工作流编排与可落地智能体系统实现。"
+    },
+    {
+      "date": "2025-09",
+      "title": "前后端工程体系与分布式架构强化",
+      "description": "进一步掌握 React、FastAPI 等现代前后端技术栈，并扩展到微服务、分布式系统与工程化架构设计，提升复杂系统构建能力。"
+    },
+    {
+      "date": "2025-09",
+      "title": "脑机接口与 AIGC 鉴伪研究拓展",
+      "description": "在 EEG 脑机接口方向持续深入，同时关注 AIGC 内容鉴伪与多模态智能安全问题，推进研究议题向前沿交叉领域延展。"
     }
   ],
   "skills": [
@@ -87,13 +131,23 @@
   "contacts": [
     {
       "label": "Email",
-      "value": "hello@example.com",
-      "url": "mailto:hello@example.com"
+      "value": "406987331@qq.com",
+      "url": "mailto:406987331@qq.com"
+    },
+    {
+      "label": "Email",
+      "value": "JingShangPiao@gmail.com",
+      "url": "mailto:JingShangPiao@gmail.com"
+    },
+    {
+      "label": "Email",
+      "value": "R32314095@stu.ahu.edu.cn",
+      "url": "mailto:R32314095@stu.ahu.edu.cn"
     },
     {
       "label": "GitHub",
-      "value": "github.com/your-handle",
-      "url": "https://github.com/your-handle"
+      "value": "github.com/xiaolu-666113",
+      "url": "https://github.com/xiaolu-666113"
     },
     {
       "label": "LinkedIn",

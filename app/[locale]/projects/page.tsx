@@ -36,6 +36,7 @@ export default async function ProjectsPage({
 
   return (
     <div className="space-y-8">
+      <InternshipSection locale={resolvedLocale} internships={internships} />
       <div>
         <h1 className="text-3xl font-semibold tracking-tight">
           {dict.nav.projects}
@@ -44,7 +45,6 @@ export default async function ProjectsPage({
           {dict.sections.featuredProjects}
         </p>
       </div>
-      <InternshipSection locale={resolvedLocale} internships={internships} />
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <ProjectCard key={item.slug} item={item} locale={resolvedLocale} />

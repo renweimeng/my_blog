@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { defaultLocale, isLocale } from "@/lib/i18n/locales";
-import { getLocaleFromAcceptLanguage, getLocaleFromPathname } from "@/lib/i18n/routing";
+import { defaultLocale } from "@/lib/i18n/locales";
+import { getLocaleFromPathname } from "@/lib/i18n/routing";
 
 const PUBLIC_FILE = /\.(.*)$/;
 
@@ -18,26 +18,18 @@ export function middleware(request: NextRequest) {
   const localeInPath = getLocaleFromPathname(pathname);
 
   if (pathname === "/") {
-    const detected = getLocaleFromAcceptLanguage(
-      request.headers.get("accept-language"),
-    );
-    const nextLocale = isLocale(detected) ? detected : defaultLocale;
     const url = request.nextUrl.clone();
-    url.pathname = `/${nextLocale}`;
+    url.pathname = `/${defaultLocale}`;
     const response = NextResponse.redirect(url);
-    response.cookies.set("NEXT_LOCALE", nextLocale, { path: "/" });
+    response.cookies.set("NEXT_LOCALE", defaultLocale, { path: "/" });
     return response;
   }
 
   if (!localeInPath) {
-    const detected = getLocaleFromAcceptLanguage(
-      request.headers.get("accept-language"),
-    );
-    const nextLocale = isLocale(detected) ? detected : defaultLocale;
     const url = request.nextUrl.clone();
-    url.pathname = `/${nextLocale}${pathname}`;
+    url.pathname = `/${defaultLocale}${pathname}`;
     const response = NextResponse.redirect(url);
-    response.cookies.set("NEXT_LOCALE", nextLocale, { path: "/" });
+    response.cookies.set("NEXT_LOCALE", defaultLocale, { path: "/" });
     return response;
   }
 

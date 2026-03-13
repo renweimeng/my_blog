@@ -20,6 +20,10 @@ export type EducationItem = {
   detail?: {
     schoolIntro: string;
     majorIntro: string;
+    metrics?: {
+      gpa?: string;
+      rank?: string;
+    };
     curriculum: {
       math: string[];
       csFundamentals: string[];

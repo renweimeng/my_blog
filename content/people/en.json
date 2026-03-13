@@ -11,40 +11,70 @@
       "start": "2023",
       "end": "2027",
       "description": "Built a strong foundation in algorithms, computer vision, and machine learning, while leading research-oriented engineering projects.",
-      "achievements": ["Strong core GPA", "Led undergraduate research training", "University innovation grant project"],
+      "achievements": ["Ranked 1st in Grade", "Team Lead for a National College Innovation and Entrepreneurship Competition", "Research Group Lead"],
       "detail": {
         "schoolIntro": "Anhui University is a Double First-Class university with strong emphasis on innovation, engineering practice, and interdisciplinary learning.",
         "majorIntro": "Digital Media Technology combines computer science, interactive systems, and intelligent media engineering to build both technical depth and creative capability.",
+        "metrics": {
+          "gpa": "92.24/100",
+          "rank": "1/100"
+        },
         "curriculum": {
           "math": ["Calculus", "Linear Algebra", "Probability and Statistics", "Discrete Mathematics"],
-          "csFundamentals": ["Data Structures", "Operating Systems", "Computer Networks", "Database Systems", "Computer Architecture"],
-          "advanced": ["Machine Learning", "Deep Learning", "Computer Vision", "Natural Language Processing", "Multimedia Technology"],
-          "general": ["Academic English", "Research Writing", "Innovation and Entrepreneurship", "Communication Skills"]
+          "csFundamentals": ["Data Structures", "Operating Systems", "Computer Networks", "Database Systems", "Computer Architecture", "C/Java/Python"],
+          "advanced": ["Machine Learning", "Deep Learning", "Computer Vision", "Natural Language Processing", "Multimedia Technology", "computer security", "Human-Computer Interaction", "Computer Graphics"],
+          "general": ["IELTS", "Macro/Micro-economics", "psychology", "Medieval History of the Century"]
         },
-        "awards": ["University Scholarship", "Campus Innovation Competition Award", "Outstanding Student Leader"],
-        "volunteering": ["Freshman onboarding volunteer", "Community STEM outreach", "Campus tech workshop volunteer tutor"]
+        "awards": [
+          "National Scholarship",
+          "Provincial First Prize, China Undergraduate Mathematical Contest in Modeling",
+          "Honorable Mention, Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling",
+          "Provincial Second Prize, Lanqiao Cup Java Track"
+        ],
+        "volunteering": [
+          "Volunteer Service for the 12355 Youth Service Platform",
+          "Community outreach volunteer activity with Anhui Meishan Public Welfare Foundation"
+        ]
       }
     }
   ],
   "internships": [
     {
-      "company": "Technology Company, AI Team",
-      "role": "Algorithm Engineering Intern",
+      "company": "Taiyuan Longwei Electronic Technology Co., Ltd.",
+      "role": "Java Backend Development Intern",
       "start": "2025-07",
       "end": "2025-09",
-      "location": "Hefei",
-      "summary": "Worked on visual recognition and intelligent retrieval projects, including data processing, model training, and evaluation.",
+      "location": "Taiyuan",
+      "summary": "Contributed to backend API development and database management, and helped deliver stable RESTful APIs for frontend integration.",
       "detail": {
-        "companyIntro": "The team focuses on AIGC-enabled products and intelligent interaction systems across enterprise and multimodal scenarios.",
-        "roleIntro": "Responsible for experiment design, training pipeline maintenance, online performance tracking, and technical reporting.",
+        "companyIntro": "The company focuses on electronic technology and enterprise software systems, delivering stable engineering solutions for real business scenarios.",
+        "roleIntro": "Worked as a Java backend development intern on API implementation, database management, and backend-frontend integration under a Spring Boot and MyBatis stack.",
         "highlights": [
-          "Built data cleaning and annotation workflows to improve training quality.",
-          "Optimized retrieval pipeline and improved online recall efficiency.",
-          "Conducted model comparison experiments and delivered evaluation reports."
+          "Developed backend interfaces and managed databases using Spring Boot and MyBatis.",
+          "Collaborated with the frontend team to design and implement RESTful APIs, improving data transmission efficiency and system stability."
         ],
-        "tech": ["Python", "PyTorch", "OpenCV", "SQL", "Docker"],
-        "awards": ["Outstanding Intern", "Best Technical Sharing Award"],
-        "volunteering": ["Volunteer speaker for internal workshops", "University AI community outreach"]
+        "tech": ["Java", "Spring Boot", "MyBatis", "MySQL", "RESTful API"],
+        "awards": [],
+        "volunteering": []
+      }
+    },
+    {
+      "company": "State Grid Shanxi Electric Power Company",
+      "role": "Systems Operations Intern",
+      "start": "2024-07",
+      "end": "2024-09",
+      "location": "Shanxi",
+      "summary": "Supported daily operations of the electric power platform and analyzed operational data to assist system optimization.",
+      "detail": {
+        "companyIntro": "State Grid Shanxi Electric Power Company operates critical regional power infrastructure, where platform reliability, availability, and operational insight are essential.",
+        "roleIntro": "Worked as a systems operations intern on daily platform maintenance, operational support, and data analysis for reliability improvement.",
+        "highlights": [
+          "Participated in the daily operations and maintenance of the power system platform to ensure stable operation of critical systems.",
+          "Analyzed operational data and produced monthly reports to support system optimization."
+        ],
+        "tech": ["System Operations", "Monitoring", "Data Analysis", "Reporting"],
+        "awards": [],
+        "volunteering": []
       }
     }
   ],
@@ -52,22 +82,44 @@
     "title": "Musician",
     "intro": "I am a drummer, and I also play guitar and piano. I compose music as well.",
     "instruments": ["Drums", "Guitar", "Piano", "Composition", "Music Production"],
-    "bandPhotos": ["/music/band-1.svg", "/music/band-2.svg", "/music/band-3.svg"],
-    "track": "/music/demo-track.wav"
+    "bandPhotos": ["/music/band.jpg"],
+    "track": "/music/Funk.mp3"
   },
   "timeline": [
     {
-      "date": "2025",
-      "title": "Research Lead, AI Lab",
-      "description": "Led retrieval and interpretability initiatives from prototype to product.",
-      "links": [
-        { "label": "Lab", "url": "https://example.com" }
-      ]
+      "date": "2023-09",
+      "title": "Mathematical Foundations and Programming Training",
+      "description": "Built a rigorous foundation in calculus, linear algebra, probability, and statistics while completing structured programming training to establish computational thinking and engineering discipline."
     },
     {
-      "date": "2023",
-      "title": "M.S. in Computer Science",
-      "description": "Focus on knowledge augmentation, dialog systems, and systems engineering."
+      "date": "2024-03",
+      "title": "Advanced CS Coursework and Full-Stack Foundations",
+      "description": "Moved into core computer science study, including data structures and systems knowledge, while systematically learning Java backend development and HTML/CSS/JavaScript frontend engineering."
+    },
+    {
+      "date": "2024-09",
+      "title": "Research in Medical Imaging and Computer Vision",
+      "description": "Joined a research group to work on coronary CTA artifact reduction, focusing on the intersection of medical imaging, computer vision, and real-world scientific problems."
+    },
+    {
+      "date": "2024-12",
+      "title": "Exploration of Software Vulnerability Detection",
+      "description": "Expanded into software security research, improving vulnerability detection methods with emphasis on code representation, defect pattern modeling, and detection effectiveness."
+    },
+    {
+      "date": "2025-03",
+      "title": "Deep Dive into LLM Systems and Agent Architectures",
+      "description": "Studied large language model systems in depth, with focus on RAG enhancement, reasoning-chain optimization, agent workflow orchestration, and deployable intelligent agent pipelines."
+    },
+    {
+      "date": "2025-09",
+      "title": "Modern Full-Stack Engineering and Distributed Architectures",
+      "description": "Strengthened practical command of modern stacks such as React and FastAPI, while extending into microservices, distributed systems, and production-grade architecture design."
+    },
+    {
+      "date": "2025-09",
+      "title": "Expansion into EEG BCI and AIGC Authenticity Research",
+      "description": "Advanced further in EEG-based brain-computer interface research while also focusing on AIGC authenticity detection and multimodal AI safety at the frontier of cross-disciplinary research."
     }
   ],
   "skills": [
@@ -87,13 +139,23 @@
   "contacts": [
     {
       "label": "Email",
-      "value": "hello@example.com",
-      "url": "mailto:hello@example.com"
+      "value": "406987331@qq.com",
+      "url": "mailto:406987331@qq.com"
+    },
+    {
+      "label": "Email",
+      "value": "JingShangPiao@gmail.com",
+      "url": "mailto:JingShangPiao@gmail.com"
+    },
+    {
+      "label": "Email",
+      "value": "R32314095@stu.ahu.edu.cn",
+      "url": "mailto:R32314095@stu.ahu.edu.cn"
     },
     {
       "label": "GitHub",
-      "value": "github.com/your-handle",
-      "url": "https://github.com/your-handle"
+      "value": "github.com/xiaolu-666113",
+      "url": "https://github.com/xiaolu-666113"
     },
     {
       "label": "LinkedIn",

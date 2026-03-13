@@ -9,6 +9,7 @@ import {
   Eye,
   LineChart,
   Music2,
+  Network,
   Sparkles,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -52,14 +53,14 @@ export function HomeWhatIDo({ locale, music }: HomeWhatIDoProps) {
 
   const fullStackBars = isZh
     ? [
-        { label: "前端工程", value: 92 },
-        { label: "后端工程", value: 86 },
-        { label: "工程化与部署", value: 82 },
+        { label: "前端工程", value: 82 },
+        { label: "后端工程", value: 91 },
+        { label: "工程化与部署", value: 71 },
       ]
     : [
-        { label: "Frontend Engineering", value: 92 },
-        { label: "Backend Engineering", value: 86 },
-        { label: "DevOps & Deployment", value: 82 },
+        { label: "Frontend Engineering", value: 82 },
+        { label: "Backend Engineering", value: 91 },
+        { label: "DevOps & Deployment", value: 71 },
       ];
 
   const analysisBars = isZh
@@ -72,6 +73,22 @@ export function HomeWhatIDo({ locale, music }: HomeWhatIDoProps) {
         { label: "Statistical Analysis", value: 88 },
         { label: "Data Visualization", value: 85 },
         { label: "Experiment Design", value: 81 },
+      ];
+
+  const aiEngineeringBars = isZh
+    ? [
+        { label: "深度学习", value: 87 },
+        { label: "计算机视觉", value: 83 },
+        { label: "LLM", value: 92 },
+        { label: "机器学习", value: 80 },
+        { label: "Agent开发", value: 70 },
+      ]
+    : [
+        { label: "Deep Learning", value: 87 },
+        { label: "Computer Vision", value: 83 },
+        { label: "LLM", value: 92 },
+        { label: "Machine Learning", value: 80 },
+        { label: "Agent Development", value: 70 },
       ];
 
   const researchTracks = isZh
@@ -94,13 +111,12 @@ export function HomeWhatIDo({ locale, music }: HomeWhatIDoProps) {
       ? "我是一个鼓手，平时也弹吉他、钢琴，也会作曲。"
       : "I am a drummer, and I also play guitar and piano. I compose music as well.",
     instruments: ["Drums", "Guitar", "Piano", "Composition", "Music Production"],
-    bandPhotos: ["/music/band-1.svg", "/music/band-2.svg", "/music/band-3.svg"],
-    track: "/music/demo-track.wav",
+    bandPhotos: ["/music/band_zyz.jpg"],
+    track: "/music/Funk.mp3",
   };
 
   const profile = music ?? fallbackMusic;
-  const defaultPhotos = ["/music/band-1.svg", "/music/band-2.svg", "/music/band-3.svg"];
-  const bandPhotos = Array.from({ length: 3 }, (_, i) => profile.bandPhotos[i] ?? defaultPhotos[i]);
+  const heroBandImage = profile.bandPhotos[0] ?? "/music/band.jpg";
 
   return (
     <section className="space-y-6 reveal-up delay-2">
@@ -111,7 +127,7 @@ export function HomeWhatIDo({ locale, music }: HomeWhatIDoProps) {
         </h2>
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className="grid gap-4 xl:grid-cols-3">
         <article className="glass-card reveal-up border-white/50 bg-gradient-to-br from-card via-card to-sky-500/10 p-6 dark:border-white/10">
           <div className="flex items-center gap-2">
             <Code2 className="size-5 text-primary" />
@@ -126,7 +142,22 @@ export function HomeWhatIDo({ locale, music }: HomeWhatIDoProps) {
           </p>
           <Bars bars={fullStackBars} />
           <div className="mt-4 flex flex-wrap gap-2">
-            {["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Docker"].map((item) => (
+            {[
+              "Vue 3",
+              "React 19",
+              "Next.js",
+              "Next.js Server Actions",
+              "TypeScript",
+              "Tailwind CSS",
+              "Prisma",
+              "PostgreSQL",
+              "Vercel",
+              "Node.js",
+              "Spring Boot",
+              "MyBatis",
+              "Redis",
+              "Docker",
+            ].map((item) => (
               <Badge key={item} variant="outline" className="bg-white/65 dark:bg-white/5">
                 {item}
               </Badge>
@@ -148,11 +179,55 @@ export function HomeWhatIDo({ locale, music }: HomeWhatIDoProps) {
           </p>
           <Bars bars={analysisBars} />
           <div className="mt-4 flex flex-wrap gap-2">
-            {["Python", "Pandas", "SQL", "Tableau", "Power BI"].map((item) => (
+            {[
+              "Python",
+              "Pandas",
+              "SQL",
+              "Snowflake",
+              "MetricQL",
+              "R",
+              "Scikit-learn",
+              "Tableau",
+              "Power BI",
+            ].map((item) => (
               <Badge key={item} variant="outline" className="bg-white/65 dark:bg-white/5">
                 {item}
               </Badge>
             ))}
+          </div>
+        </article>
+
+        <article className="glass-card reveal-up border-white/50 bg-gradient-to-br from-card via-card to-fuchsia-500/10 p-6 dark:border-white/10 delay-2">
+          <div className="flex items-center gap-2">
+            <Network className="size-5 text-fuchsia-400" />
+            <h3 className="text-lg font-semibold">
+              {isZh ? "人工智能工程" : "AI Engineering"}
+            </h3>
+          </div>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {isZh
+              ? "专注机器学习、深度学习、LLM、计算机视觉与智能系统开发，覆盖数据处理、模型训练与推理部署。"
+              : "Focused on machine learning, deep learning, LLMs, computer vision, and intelligent systems, spanning data processing, training, and inference deployment."}
+          </p>
+          <Bars bars={aiEngineeringBars} />
+          <div className="mt-4 flex flex-wrap gap-2">
+            {[
+              "Python",
+              "PyTorch",
+              "OpenCV",
+              "Transformers",
+              "LangGraph",
+              "LangChain",
+              "vLLM",
+              "Pinecone",
+              "CUDA",
+            ].map(
+              (item) => (
+                <Badge key={item} variant="outline" className="bg-white/65 dark:bg-white/5">
+                  {item}
+                </Badge>
+              ),
+            )}
           </div>
         </article>
       </div>
@@ -206,24 +281,19 @@ export function HomeWhatIDo({ locale, music }: HomeWhatIDoProps) {
           </div>
 
           <div className="rounded-[1.7rem] border border-slate-200/80 bg-white/85 p-4 shadow-[0_10px_30px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-slate-900/65">
-            <div className="grid gap-3 md:grid-cols-[170px_1fr_1fr_1fr]">
+            <div className="grid gap-3 md:grid-cols-[170px_1fr]">
               <div className="flex h-full min-h-[148px] items-center justify-center rounded-3xl bg-slate-800 p-6 text-center text-4xl font-semibold text-orange-400">
                 Band
               </div>
-              {bandPhotos.map((photo, index) => (
-                <div
-                  key={`${photo}-${index}`}
-                  className="group relative min-h-[148px] overflow-hidden rounded-3xl"
-                >
-                  <Image
-                    src={photo}
-                    alt={`band-${index + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 240px"
-                  />
-                </div>
-              ))}
+              <div className="group relative min-h-[148px] overflow-hidden rounded-3xl md:min-h-[220px]">
+                <Image
+                  src={heroBandImage}
+                  alt="band"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 900px"
+                />
+              </div>
             </div>
           </div>
         </div>

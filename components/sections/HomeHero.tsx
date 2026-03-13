@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/seo/metadata";
+import { getSiteName } from "@/lib/seo/metadata";
 import type { Dictionary } from "@/lib/i18n/routing";
 import type { Locale } from "@/lib/i18n/locales";
 
@@ -16,6 +16,8 @@ export function HomeHero({
   photo: string;
   name: string;
 }) {
+  const siteName = getSiteName(locale);
+
   return (
     <section className="relative overflow-hidden rounded-[2rem] border border-white/40 bg-gradient-to-br from-sky-100/85 via-white to-emerald-100/75 px-6 py-16 shadow-[0_24px_70px_rgba(15,23,42,0.12)] dark:border-white/10 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 sm:px-12">
       <div className="absolute -left-24 top-8 h-52 w-52 rounded-full bg-primary/25 blur-3xl" />
@@ -27,7 +29,7 @@ export function HomeHero({
             {dict.home.heroKicker}
           </p>
           <p className="text-sm font-medium text-foreground/80">
-            {siteConfig.name}
+            {siteName}
           </p>
           <h1 className="text-3xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
             {dict.home.heroTitle}

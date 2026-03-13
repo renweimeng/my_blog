@@ -32,6 +32,8 @@ export default async function AboutPage({
   const dict = getDictionary(resolvedLocale);
   const person = getPerson(resolvedLocale);
   const photo = person.photos[0];
+  const emailContacts = person.contacts.filter((contact) => contact.label === "Email");
+  const otherContacts = person.contacts.filter((contact) => contact.label !== "Email");
 
   return (
     <div className="space-y-10">
@@ -95,8 +97,24 @@ export default async function AboutPage({
             {dict.labels.contacts}
           </h2>
           <div className="space-y-3 text-sm text-muted-foreground">
-            {person.contacts.map((contact) => (
-              <div key={contact.label} className="flex flex-col">
+            {emailContacts.length > 0 ? (
+              <div className="flex flex-col">
+                <span className="text-xs uppercase tracking-widest">Email</span>
+                <div className="mt-1 space-y-1">
+                  {emailContacts.map((contact) => (
+                    <a
+                      key={`${contact.label}-${contact.value}`}
+                      href={contact.url}
+                      className="block font-medium text-foreground underline-offset-4 hover:underline"
+                    >
+                      {contact.value}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+            {otherContacts.map((contact) => (
+              <div key={`${contact.label}-${contact.value}`} className="flex flex-col">
                 <span className="text-xs uppercase tracking-widest">
                   {contact.label}
                 </span>

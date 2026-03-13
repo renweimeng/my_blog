@@ -28,6 +28,8 @@ export default async function ContactPage({
   const resolvedLocale = isLocale(locale) ? locale : "zh";
   const dict = getDictionary(resolvedLocale);
   const person = getPerson(resolvedLocale);
+  const emailContacts = person.contacts.filter((contact) => contact.label === "Email");
+  const otherContacts = person.contacts.filter((contact) => contact.label !== "Email");
 
   return (
     <div className="space-y-6">
@@ -40,8 +42,26 @@ export default async function ContactPage({
         </p>
       </div>
       <div className="grid gap-6 sm:grid-cols-2">
-        {person.contacts.map((contact) => (
-          <div key={contact.label} className="rounded-2xl border p-4">
+        {emailContacts.length > 0 ? (
+          <div className="rounded-2xl border p-4">
+            <p className="text-xs uppercase tracking-widest text-muted-foreground">
+              Email
+            </p>
+            <div className="mt-2 space-y-2">
+              {emailContacts.map((contact) => (
+                <a
+                  key={`${contact.label}-${contact.value}`}
+                  href={contact.url}
+                  className="block text-base font-medium text-foreground underline-offset-4 hover:underline"
+                >
+                  {contact.value}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : null}
+        {otherContacts.map((contact) => (
+          <div key={`${contact.label}-${contact.value}`} className="rounded-2xl border p-4">
             <p className="text-xs uppercase tracking-widest text-muted-foreground">
               {contact.label}
             </p>

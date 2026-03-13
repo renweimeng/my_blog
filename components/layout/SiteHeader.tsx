@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/lib/seo/metadata";
+import { getSiteName } from "@/lib/seo/metadata";
 import type { Locale } from "@/lib/i18n/locales";
 import type { Dictionary } from "@/lib/i18n/routing";
 
@@ -20,6 +20,7 @@ export function SiteHeader({
   locale: Locale;
   dict: Dictionary;
 }) {
+  const siteName = getSiteName(locale);
   const navItems = [
     { href: `/${locale}`, label: dict.nav.home },
     { href: `/${locale}/research`, label: dict.nav.research },
@@ -36,7 +37,7 @@ export function SiteHeader({
           href={`/${locale}`}
           className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-base font-semibold tracking-tight text-transparent"
         >
-          {siteConfig.name}
+          {siteName}
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
           {navItems.map((item) => (

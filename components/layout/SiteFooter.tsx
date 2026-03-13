@@ -6,7 +6,10 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
   const year = new Date().getFullYear();
 
   const social = [
-    { label: "Email", href: `mailto:${siteConfig.links.email}` },
+    ...siteConfig.links.emails.map((email, index) => ({
+      label: index === 0 ? "Email" : `Email ${index + 1}`,
+      href: `mailto:${email}`,
+    })),
     { label: "GitHub", href: siteConfig.links.github },
     { label: "LinkedIn", href: siteConfig.links.linkedin },
     { label: "Scholar", href: siteConfig.links.scholar },

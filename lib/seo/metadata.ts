@@ -2,19 +2,27 @@ import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n/locales";
 
 export const siteConfig = {
-  name: "Your Name",
-  title: "Your Name — Research & Projects",
+  name: "Renwei Meng",
+  title: "Renwei Meng — Research & Projects",
   description:
     "Personal research and product portfolio spanning AI systems, engineering projects, and writing.",
   url: "https://example.com",
   ogImage: "/covers/og-default.svg",
   links: {
-    email: "hello@example.com",
+    emails: [
+      "406987331@qq.com",
+      "JingShangPiao@gmail.com",
+      "R32314095@stu.ahu.edu.cn",
+    ],
     github: "https://github.com/your-handle",
     linkedin: "https://linkedin.com/in/your-handle",
     scholar: "https://scholar.google.com",
   },
 };
+
+export function getSiteName(locale: Locale) {
+  return locale === "zh" ? "孟任巍" : "Renwei Meng";
+}
 
 export type MetadataOptions = {
   title: string;
@@ -33,7 +41,8 @@ export function createMetadata({
   image,
   type = "website",
 }: MetadataOptions): Metadata {
-  const fullTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.title;
+  const siteName = getSiteName(locale);
+  const fullTitle = title ? `${title} | ${siteName}` : siteConfig.title;
   const url = new URL(path, siteConfig.url).toString();
   const imageUrl = image ?? siteConfig.ogImage;
 
@@ -51,7 +60,7 @@ export function createMetadata({
       title: fullTitle,
       description: description ?? siteConfig.description,
       url,
-      siteName: siteConfig.name,
+      siteName,
       locale: locale === "zh" ? "zh_CN" : "en_US",
       type,
       images: [

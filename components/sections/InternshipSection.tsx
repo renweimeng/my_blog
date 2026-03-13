@@ -93,27 +93,6 @@ export function InternshipSection({ locale, internships }: InternshipSectionProp
                 ))}
               </div>
             </section>
-
-            <section className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-border/70 bg-card/75 p-5">
-                <h4 className="text-base font-semibold">{isZh ? "奖项" : "Awards"}</h4>
-                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                  {active.detail.awards.map((item) => (
-                    <li key={item}>- {item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-2xl border border-border/70 bg-card/75 p-5">
-                <h4 className="text-base font-semibold">
-                  {isZh ? "参加志愿" : "Volunteering"}
-                </h4>
-                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                  {active.detail.volunteering.map((item) => (
-                    <li key={item}>- {item}</li>
-                  ))}
-                </ul>
-              </div>
-            </section>
           </>
         ) : (
           <section className="rounded-2xl border border-border/70 bg-card/75 p-5">

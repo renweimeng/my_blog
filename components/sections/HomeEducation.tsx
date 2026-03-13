@@ -102,6 +102,27 @@ export function HomeEducation({ locale, education }: HomeEducationProps) {
               </p>
             </section>
 
+            {active.detail.metrics ? (
+              <section className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-border/70 bg-card/75 p-5">
+                  <h4 className="text-lg font-semibold">
+                    {isZh ? "绩点 / 成绩" : "GPA / Score"}
+                  </h4>
+                  <p className="mt-3 text-3xl font-semibold tracking-tight">
+                    {active.detail.metrics.gpa ?? "--"}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border/70 bg-card/75 p-5">
+                  <h4 className="text-lg font-semibold">
+                    {isZh ? "排名" : "Rank"}
+                  </h4>
+                  <p className="mt-3 text-3xl font-semibold tracking-tight">
+                    {active.detail.metrics.rank ?? "--"}
+                  </p>
+                </div>
+              </section>
+            ) : null}
+
             <section className="rounded-2xl border border-border/70 bg-card/75 p-5">
               <h4 className="text-lg font-semibold">
                 {isZh ? "主修学科" : "Core Curriculum"}
