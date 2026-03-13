@@ -116,7 +116,7 @@ export function HomeWhatIDo({ locale, music }: HomeWhatIDoProps) {
   };
 
   const profile = music ?? fallbackMusic;
-  const heroBandImage = profile.bandPhotos[0] ?? "/music/band.jpg";
+  const heroBandImage = profile.bandPhotos[0] ?? "/music/band_zyz.jpg";
 
   return (
     <section className="space-y-6 reveal-up delay-2">

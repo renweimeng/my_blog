@@ -74,7 +74,7 @@
     "title": "音乐人",
     "intro": "我是一个鼓手，平时也弹吉他、钢琴，也会作曲。",
     "instruments": ["Drums", "Guitar", "Piano", "Composition", "Music Production"],
-    "bandPhotos": ["/music/band.jpg"],
+    "bandPhotos": ["/music/band_zyz.jpg"],
     "track": "/music/Funk.mp3"
   },
   "timeline": [

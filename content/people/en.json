@@ -82,7 +82,7 @@
     "title": "Musician",
     "intro": "I am a drummer, and I also play guitar and piano. I compose music as well.",
     "instruments": ["Drums", "Guitar", "Piano", "Composition", "Music Production"],
-    "bandPhotos": ["/music/band.jpg"],
+    "bandPhotos": ["/music/band_zyz.jpg"],
     "track": "/music/Funk.mp3"
   },
   "timeline": [
