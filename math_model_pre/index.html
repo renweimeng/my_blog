@@ -787,6 +787,9 @@
 
     .btn {
       position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 0.92rem 1.22rem;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -794,6 +797,7 @@
       color: var(--text);
       cursor: pointer;
       overflow: hidden;
+      text-decoration: none;
       box-shadow: var(--shadow-md);
       transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
     }
@@ -3272,6 +3276,46 @@
       margin-top: 0.95rem;
     }
 
+    .knowledge-tree-entry {
+      display: grid;
+      grid-template-columns: 1.45fr 0.9fr;
+      gap: 1.4rem;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding: 1.45rem 1.55rem;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        radial-gradient(circle at top left, rgba(87, 233, 255, 0.12), transparent 36%),
+        radial-gradient(circle at top right, rgba(162, 89, 255, 0.12), transparent 30%),
+        linear-gradient(145deg, rgba(10, 18, 40, 0.92), rgba(11, 17, 33, 0.86));
+      box-shadow: 0 22px 56px rgba(2, 10, 25, 0.28);
+    }
+
+    .knowledge-tree-entry h3 {
+      margin: 0.4rem 0 0.7rem;
+      font-size: clamp(1.28rem, 2vw, 1.85rem);
+    }
+
+    .knowledge-tree-entry .hero-cta {
+      margin-top: 1rem;
+    }
+
+    .knowledge-tree-highlights {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .knowledge-tree-pill {
+      padding: 0.95rem 1rem;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted-strong);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
     @media (max-width: 900px) {
       .tier-row {
         grid-template-columns: 1fr;
@@ -3294,6 +3338,10 @@
 
       .tier-placeholder {
         font-size: 1.18rem;
+      }
+
+      .knowledge-tree-entry {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -3848,6 +3896,26 @@
             </ul>
           </article>
         </div>
+
+        <article class="knowledge-tree-entry" data-reveal style="--delay: 420ms;">
+          <div>
+            <div class="eyebrow">Knowledge Tree</div>
+            <h3>把高层目标拆成可执行的学习路径</h3>
+            <p class="muted-copy">
+              如果你想从 Transformer、医学 AI、智能体 Agent 这类“山顶目标”出发，反推它到底建立在哪些数学、信号、系统和算法知识之上，
+              我专门做了一张中文可交互知识大树。
+            </p>
+            <div class="hero-cta">
+              <a class="btn primary" href="/zh/knowledge-tree">打开知识树页面</a>
+            </div>
+          </div>
+
+          <div class="knowledge-tree-highlights">
+            <div class="knowledge-tree-pill">点击任意节点，递归高亮全部前置知识与依赖路径。</div>
+            <div class="knowledge-tree-pill">右侧面板自动生成“从底层到目标”的推荐学习顺序。</div>
+            <div class="knowledge-tree-pill">支持搜索、按层筛选、仅查看当前学习路径、最近浏览记录。</div>
+          </div>
+        </article>
       </div>
     </section>
 
