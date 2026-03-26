@@ -3051,6 +3051,252 @@
       }
     }
 
+    .tier-lab {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .tier-board {
+      overflow: hidden;
+      border-radius: 28px;
+      border: 3px solid rgba(15, 23, 42, 0.94);
+      background:
+        linear-gradient(180deg, rgba(255, 251, 243, 0.98), rgba(248, 244, 236, 0.98)),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+      background-size: auto, 34px 34px, 34px 34px;
+      box-shadow: 0 30px 80px rgba(3, 12, 31, 0.28);
+    }
+
+    .tier-row {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      min-height: 132px;
+      border-bottom: 3px solid rgba(15, 23, 42, 0.94);
+    }
+
+    .tier-row:last-child {
+      border-bottom: 0;
+    }
+
+    .tier-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      color: rgba(15, 23, 42, 0.98);
+      font-size: clamp(2.15rem, 4vw, 3.4rem);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      border-right: 3px solid rgba(15, 23, 42, 0.94);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .tier-label-s {
+      background: linear-gradient(180deg, #ff7069 0%, #ff7d67 100%);
+    }
+
+    .tier-label-a {
+      background: linear-gradient(180deg, #ff9b53 0%, #ffc266 100%);
+    }
+
+    .tier-label-b {
+      background: linear-gradient(180deg, #ffe58b 0%, #fff0b1 100%);
+    }
+
+    .tier-label-c {
+      background: linear-gradient(180deg, #fff1a3 0%, #fff6cc 100%);
+    }
+
+    .tier-label-d {
+      background: linear-gradient(180deg, #fff8e0 0%, #f7f1e2 100%);
+    }
+
+    .tier-dropzone {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      gap: 0.85rem;
+      padding: 1.35rem 1.55rem;
+      position: relative;
+      min-height: 132px;
+      transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .tier-dropzone.dragover {
+      background: rgba(126, 87, 255, 0.08);
+      box-shadow: inset 0 0 0 2px rgba(126, 87, 255, 0.28);
+    }
+
+    .tier-dropzone.empty .tier-placeholder {
+      opacity: 0.72;
+    }
+
+    .tier-dropzone:not(.empty) .tier-placeholder {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+
+    .tier-placeholder {
+      position: absolute;
+      left: 1.55rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(15, 23, 42, 0.24);
+      font-size: 1.6rem;
+      font-weight: 800;
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .tier-pool-shell {
+      border-radius: 26px;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      background: linear-gradient(180deg, rgba(10, 19, 43, 0.92), rgba(14, 22, 46, 0.82));
+      box-shadow: 0 24px 60px rgba(2, 8, 23, 0.22);
+      padding: 1.35rem 1.35rem 1.45rem;
+    }
+
+    .tier-pool-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .tier-pool-title {
+      color: rgba(255, 255, 255, 0.96);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .tier-pool-hint {
+      color: rgba(190, 210, 255, 0.78);
+      font-size: 0.92rem;
+    }
+
+    .tier-pool {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      min-height: 72px;
+      padding: 0.2rem 0;
+      transition: box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .tier-pool.dragover {
+      box-shadow: inset 0 0 0 2px rgba(103, 232, 249, 0.32);
+      border-radius: 18px;
+    }
+
+    .tier-chip {
+      border: 0;
+      border-radius: 999px;
+      padding: 0.82rem 1.08rem;
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: white;
+      cursor: grab;
+      user-select: none;
+      letter-spacing: 0.01em;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.22);
+      transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+      background: linear-gradient(135deg, rgba(87, 233, 255, 0.95), rgba(77, 124, 255, 0.95));
+    }
+
+    .tier-chip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 32px rgba(15, 23, 42, 0.28);
+    }
+
+    .tier-chip:active,
+    .tier-chip.dragging {
+      cursor: grabbing;
+      opacity: 0.58;
+      transform: scale(0.97);
+    }
+
+    .tier-chip[data-brand="GPT"] {
+      background: linear-gradient(135deg, #16a34a, #22c55e);
+    }
+
+    .tier-chip[data-brand="Gemini"] {
+      background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+    }
+
+    .tier-chip[data-brand="Grok"] {
+      background: linear-gradient(135deg, #0f172a, #334155);
+    }
+
+    .tier-chip[data-brand="Claude"] {
+      background: linear-gradient(135deg, #f97316, #fb923c);
+    }
+
+    .tier-chip[data-brand="豆包"] {
+      background: linear-gradient(135deg, #ec4899, #f472b6);
+    }
+
+    .tier-chip[data-brand="Kimi"] {
+      background: linear-gradient(135deg, #0ea5e9, #22d3ee);
+    }
+
+    .tier-chip[data-brand="Deepseek"] {
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+    }
+
+    .tier-reset {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      padding: 0.74rem 1rem;
+      background: rgba(255, 255, 255, 0.07);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 180ms ease, transform 180ms ease, border-color 180ms ease;
+    }
+
+    .tier-reset:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .tier-footnote {
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.86rem;
+      margin-top: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .tier-row {
+        grid-template-columns: 1fr;
+      }
+
+      .tier-label {
+        min-height: 92px;
+        border-right: 0;
+        border-bottom: 3px solid rgba(15, 23, 42, 0.94);
+      }
+
+      .tier-dropzone,
+      .tier-row {
+        min-height: unset;
+      }
+
+      .tier-dropzone {
+        min-height: 124px;
+      }
+
+      .tier-placeholder {
+        font-size: 1.18rem;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -3108,6 +3354,10 @@
   </header>
 
   <div class="floating-controls">
+    <button class="control-btn" id="fullscreen-toggle" type="button">
+      <span class="dot"></span>
+      <span>全屏演示</span>
+    </button>
     <button class="control-btn" id="speaker-toggle" type="button">
       <span class="dot"></span>
       <span>演讲提示模式</span>
@@ -3597,6 +3847,76 @@
               <li><strong>价值</strong><span>最后一公里不再临时凑，展示质量拉开差距</span></li>
             </ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="llm-rank" data-nav="模型排行">
+      <div class="panel-inner">
+        <div class="panel-header">
+          <div class="eyebrow" data-reveal>Interactive Ranking</div>
+          <h2 class="headline" data-reveal style="--delay: 60ms;">现场来一把：把你心里的 AI 模型拖进排名表</h2>
+          <p class="subhead" data-reveal style="--delay: 120ms;">
+            这是一个可以现场互动的小环节。把不同模型拖到你认可的位置，快速形成一张“个人偏好 + 能力判断”的演示榜单。
+          </p>
+          <p class="section-quote" data-reveal style="--delay: 180ms;">核心金句：比起泛泛而谈，不如把模型真的排一遍，观点会清楚很多。</p>
+        </div>
+
+        <div class="tier-lab" data-reveal>
+          <div class="tier-board">
+            <div class="tier-row">
+              <div class="tier-label tier-label-s">夯</div>
+              <div class="tier-dropzone empty" data-tier-zone="夯">
+                <span class="tier-placeholder">拖拽模型到这里</span>
+              </div>
+            </div>
+            <div class="tier-row">
+              <div class="tier-label tier-label-a">顶级</div>
+              <div class="tier-dropzone empty" data-tier-zone="顶级">
+                <span class="tier-placeholder">拖拽模型到这里</span>
+              </div>
+            </div>
+            <div class="tier-row">
+              <div class="tier-label tier-label-b">人上人</div>
+              <div class="tier-dropzone empty" data-tier-zone="人上人">
+                <span class="tier-placeholder">拖拽模型到这里</span>
+              </div>
+            </div>
+            <div class="tier-row">
+              <div class="tier-label tier-label-c">NPC</div>
+              <div class="tier-dropzone empty" data-tier-zone="NPC">
+                <span class="tier-placeholder">拖拽模型到这里</span>
+              </div>
+            </div>
+            <div class="tier-row">
+              <div class="tier-label tier-label-d">拉完了</div>
+              <div class="tier-dropzone empty" data-tier-zone="拉完了">
+                <span class="tier-placeholder">拖拽模型到这里</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tier-pool-shell">
+            <div class="tier-pool-header">
+              <div>
+                <div class="tier-pool-title">待排行模型</div>
+                <div class="tier-pool-hint">把下方模型拖进上面的任意一行，支持随时重新调整。</div>
+              </div>
+              <button type="button" class="tier-reset" data-reset-tier>一键重置</button>
+            </div>
+
+            <div class="tier-pool" data-tier-pool>
+              <button type="button" class="tier-chip" draggable="true" data-brand="GPT">GPT</button>
+              <button type="button" class="tier-chip" draggable="true" data-brand="Gemini">Gemini</button>
+              <button type="button" class="tier-chip" draggable="true" data-brand="Grok">Grok</button>
+              <button type="button" class="tier-chip" draggable="true" data-brand="Claude">Claude</button>
+              <button type="button" class="tier-chip" draggable="true" data-brand="豆包">豆包</button>
+              <button type="button" class="tier-chip" draggable="true" data-brand="Kimi">Kimi</button>
+              <button type="button" class="tier-chip" draggable="true" data-brand="Deepseek">Deepseek</button>
+            </div>
+
+            <p class="tier-footnote">小提示：如果想重新开始，点右上角“重置”就会把所有模型放回下方。</p>
+          </div>
         </div>
       </div>
     </section>
@@ -4586,6 +4906,7 @@ document.addEventListener("keydown", (event) => {
     const progressFill = document.getElementById("progress-fill");
     const pageLoader = document.getElementById("page-loader");
     const nextSectionButton = document.getElementById("next-section");
+    const fullscreenToggle = document.getElementById("fullscreen-toggle");
     const speakerToggle = document.getElementById("speaker-toggle");
     const promptTabs = document.getElementById("prompt-tabs");
     const promptContent = document.getElementById("prompt-content");
@@ -4824,6 +5145,12 @@ document.addEventListener("keydown", (event) => {
     }
 
     function setupButtons() {
+      function syncFullscreenLabel() {
+        fullscreenToggle.querySelector("span:last-child").textContent = document.fullscreenElement
+          ? "退出全屏"
+          : "全屏演示";
+      }
+
       document.querySelectorAll("[data-jump]").forEach((button) => {
         button.addEventListener("click", () => {
           const id = button.dataset.jump;
@@ -4831,6 +5158,17 @@ document.addEventListener("keydown", (event) => {
           if (index >= 0) scrollToSection(index);
         });
       });
+
+      fullscreenToggle.addEventListener("click", async () => {
+        if (document.fullscreenElement) {
+          await document.exitFullscreen();
+        } else {
+          await document.documentElement.requestFullscreen();
+        }
+      });
+
+      document.addEventListener("fullscreenchange", syncFullscreenLabel);
+      syncFullscreenLabel();
 
       nextSectionButton.addEventListener("click", () => {
         scrollToSection(activeSectionIndex + 1);
@@ -4949,6 +5287,91 @@ document.addEventListener("keydown", (event) => {
       window.addEventListener("resize", resize);
     }
 
+    function setupTierRanking() {
+      const pool = document.querySelector("[data-tier-pool]");
+      const resetButton = document.querySelector("[data-reset-tier]");
+      const zones = Array.from(document.querySelectorAll("[data-tier-zone]"));
+      if (!pool || !resetButton || !zones.length) return;
+
+      const containers = [pool, ...zones];
+      const initialModels = Array.from(pool.querySelectorAll(".tier-chip")).map((chip) => ({
+        label: chip.textContent.trim(),
+        brand: chip.dataset.brand || chip.textContent.trim(),
+      }));
+      let draggingChip = null;
+
+      function bindChip(chip) {
+        chip.setAttribute("draggable", "true");
+        chip.addEventListener("dragstart", (event) => {
+          draggingChip = chip;
+          chip.classList.add("dragging");
+          if (event.dataTransfer) {
+            event.dataTransfer.effectAllowed = "move";
+            event.dataTransfer.setData("text/plain", chip.dataset.brand || chip.textContent.trim());
+          }
+        });
+
+        chip.addEventListener("dragend", () => {
+          chip.classList.remove("dragging");
+          containers.forEach((container) => container.classList.remove("dragover"));
+          draggingChip = null;
+          refreshState();
+        });
+      }
+
+      function createChip(item) {
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "tier-chip";
+        chip.dataset.brand = item.brand;
+        chip.textContent = item.label;
+        bindChip(chip);
+        return chip;
+      }
+
+      function refreshState() {
+        zones.forEach((zone) => {
+          zone.classList.toggle("empty", !zone.querySelector(".tier-chip"));
+        });
+      }
+
+      containers.forEach((container) => {
+        container.addEventListener("dragover", (event) => {
+          event.preventDefault();
+          container.classList.add("dragover");
+          if (event.dataTransfer) {
+            event.dataTransfer.dropEffect = "move";
+          }
+        });
+
+        container.addEventListener("dragleave", () => {
+          container.classList.remove("dragover");
+        });
+
+        container.addEventListener("drop", (event) => {
+          event.preventDefault();
+          container.classList.remove("dragover");
+          if (!draggingChip) return;
+          container.appendChild(draggingChip);
+          refreshState();
+        });
+      });
+
+      resetButton.addEventListener("click", () => {
+        zones.forEach((zone) => {
+          zone.querySelectorAll(".tier-chip").forEach((chip) => chip.remove());
+        });
+        pool.innerHTML = "";
+        initialModels.forEach((item) => {
+          pool.appendChild(createChip(item));
+        });
+        refreshState();
+      });
+
+      pool.querySelectorAll(".tier-chip").forEach((chip) => bindChip(chip));
+      refreshState();
+    }
+
     function setupObservers() {
       const onScroll = () => {
         updateActiveSection();
@@ -4976,6 +5399,7 @@ document.addEventListener("keydown", (event) => {
     setupKeyboardNavigation();
     setupParallax();
     setupParticles();
+    setupTierRanking();
     setupObservers();
     setupTypingLoop();
     hideLoader();

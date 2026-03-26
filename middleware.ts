@@ -7,6 +7,12 @@ const PUBLIC_FILE = /\.(.*)$/;
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  if (pathname === "/math_model_pre" || pathname === "/math_model_pre/") {
+    const url = request.nextUrl.clone();
+    url.pathname = "/math_model_pre/index.html";
+    return NextResponse.redirect(url);
+  }
+
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
