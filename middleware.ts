@@ -13,10 +13,17 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
+  if (pathname === "/aigc-eeg" || pathname === "/aigc-eeg/") {
+    const url = request.nextUrl.clone();
+    url.pathname = "/aigc-eeg/index.html";
+    return NextResponse.redirect(url);
+  }
+
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/math_model_pre") ||
+    pathname.startsWith("/aigc-eeg") ||
     PUBLIC_FILE.test(pathname)
   ) {
     return NextResponse.next();

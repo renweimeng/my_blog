@@ -1,5 +1,6 @@
 import { ProjectCard } from "@/components/cards/ProjectCard";
 import { FeaturedTutorialCard } from "@/components/cards/FeaturedTutorialCard";
+import { AigcEegProjectCard } from "@/components/cards/AigcEegProjectCard";
 import { InternshipSection } from "@/components/sections/InternshipSection";
 import { getAllProjects } from "@/lib/content/projects";
 import { getPerson } from "@/lib/content/people";
@@ -47,6 +48,7 @@ export default async function ProjectsPage({
         </p>
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <AigcEegProjectCard />
         <FeaturedTutorialCard locale={resolvedLocale} />
         {items.map((item) => (
           <ProjectCard key={item.slug} item={item} locale={resolvedLocale} />
