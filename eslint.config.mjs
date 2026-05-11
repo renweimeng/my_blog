@@ -14,6 +14,7 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     "AIGC_EEG/**",
     "public/aigc-eeg/**",
+    "public/diffscanauth/**",
   ]),
 ]);
 

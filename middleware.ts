@@ -19,11 +19,18 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
+  if (pathname === "/diffscanauth" || pathname === "/diffscanauth/") {
+    const url = request.nextUrl.clone();
+    url.pathname = "/diffscanauth/index.html";
+    return NextResponse.redirect(url);
+  }
+
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/math_model_pre") ||
     pathname.startsWith("/aigc-eeg") ||
+    pathname.startsWith("/diffscanauth") ||
     PUBLIC_FILE.test(pathname)
   ) {
     return NextResponse.next();
