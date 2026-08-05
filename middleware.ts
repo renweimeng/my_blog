@@ -26,11 +26,21 @@ export function middleware(request: NextRequest) {
   }
 
   if (
+    pathname === "/gesture-guitar-drum" ||
+    pathname === "/gesture-guitar-drum/"
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/gesture-guitar-drum/index.html";
+    return NextResponse.redirect(url);
+  }
+
+  if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/math_model_pre") ||
     pathname.startsWith("/aigc-eeg") ||
     pathname.startsWith("/diffscanauth") ||
+    pathname.startsWith("/gesture-guitar-drum") ||
     PUBLIC_FILE.test(pathname)
   ) {
     return NextResponse.next();

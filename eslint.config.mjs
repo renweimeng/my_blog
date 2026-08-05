@@ -15,6 +15,7 @@ const eslintConfig = defineConfig([
     "AIGC_EEG/**",
     "public/aigc-eeg/**",
     "public/diffscanauth/**",
+    "public/gesture-guitar-drum/**",
   ]),
 ]);
 

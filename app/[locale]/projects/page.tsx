@@ -3,6 +3,7 @@ import { FeaturedTutorialCard } from "@/components/cards/FeaturedTutorialCard";
 import { AigcEegProjectCard } from "@/components/cards/AigcEegProjectCard";
 import { DeepheckProjectCard } from "@/components/cards/DeepheckProjectCard";
 import { DiffScanAuthProjectCard } from "@/components/cards/DiffScanAuthProjectCard";
+import { GestureMusicProjectCard } from "@/components/cards/GestureMusicProjectCard";
 import { InternshipSection } from "@/components/sections/InternshipSection";
 import { getAllProjects } from "@/lib/content/projects";
 import { getPerson } from "@/lib/content/people";
@@ -51,6 +52,7 @@ export default async function ProjectsPage({
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <DeepheckProjectCard locale={resolvedLocale} />
+        <GestureMusicProjectCard locale={resolvedLocale} />
         <DiffScanAuthProjectCard />
         <AigcEegProjectCard />
         <FeaturedTutorialCard locale={resolvedLocale} />
