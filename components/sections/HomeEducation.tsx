@@ -37,7 +37,7 @@ export function HomeEducation({ locale, education }: HomeEducationProps) {
           <button
             key={`${item.school}-${item.degree}`}
             type="button"
-            className="group glass-card reveal-up relative cursor-pointer border-white/50 bg-gradient-to-br from-card via-card to-primary/8 p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(15,23,42,0.14)] dark:border-white/10"
+            className="group glass-card reveal-up relative min-w-0 w-full cursor-pointer overflow-hidden border-white/50 bg-gradient-to-br from-card via-card to-primary/8 p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(15,23,42,0.14)] dark:border-white/10"
             style={{ animationDelay: `${120 + index * 120}ms` }}
             onClick={() => setActive(item)}
           >
@@ -62,14 +62,14 @@ export function HomeEducation({ locale, education }: HomeEducationProps) {
             {item.achievements && item.achievements.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-2">
                 {item.achievements.map((achievement) => (
-                  <Badge key={achievement} variant="outline" className="bg-white/65 dark:bg-white/5">
+                  <Badge key={achievement} variant="outline" className="max-w-full whitespace-normal bg-white/65 text-left dark:bg-white/5">
                     {achievement}
                   </Badge>
                 ))}
               </div>
             )}
 
-            <span className="pointer-events-none absolute right-4 top-4 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <span className="pointer-events-none absolute right-4 top-4 hidden rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary opacity-0 transition-opacity duration-200 group-hover:opacity-100 sm:block">
               {isZh ? "点击查看详情" : "Click for details"}
             </span>
           </button>

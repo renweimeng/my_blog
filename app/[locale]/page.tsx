@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SectionScene } from "@/components/animations/SectionScene";
 import { HomeHero } from "@/components/sections/HomeHero";
+import { HomePublications } from "@/components/sections/HomePublications";
 import { HomeFeatured } from "@/components/sections/HomeFeatured";
 import { HomeLatestArticles } from "@/components/sections/HomeLatestArticles";
 import { HomeEducation } from "@/components/sections/HomeEducation";
@@ -73,6 +74,10 @@ export default async function HomePage({
           photo={portrait}
           name={person.name}
         />
+      </SectionScene>
+
+      <SectionScene>
+        <HomePublications locale={resolvedLocale} />
       </SectionScene>
 
       <SectionScene>

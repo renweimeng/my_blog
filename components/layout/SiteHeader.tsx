@@ -8,6 +8,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getSiteName } from "@/lib/seo/metadata";
 import type { Locale } from "@/lib/i18n/locales";
@@ -35,7 +36,7 @@ export function SiteHeader({
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href={`/${locale}`}
-          className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-base font-semibold tracking-tight text-transparent"
+          className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-sm font-semibold tracking-tight text-transparent sm:text-base"
         >
           {siteName}
         </Link>
@@ -54,13 +55,14 @@ export function SiteHeader({
           <LocaleSwitcher locale={locale} />
           <ThemeSwitcher />
         </div>
-        <div className="flex items-center gap-2 md:hidden">
-          <LocaleSwitcher locale={locale} />
-          <ThemeSwitcher />
+        <div className="flex items-center gap-1 md:hidden">
+          <LocaleSwitcher locale={locale} compact />
+          <ThemeSwitcher compact />
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="sm" className="h-9 border border-border/60 bg-white/45 px-3 dark:bg-white/10">
-                {dict.actions.menu}
+              <Button variant="ghost" size="icon" className="size-9 shrink-0 border border-border/60 bg-white/45 dark:bg-white/10">
+                <Menu className="size-4" />
+                <span className="sr-only">{dict.actions.menu}</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-72 border-l border-border/70 bg-card/95 backdrop-blur-xl">

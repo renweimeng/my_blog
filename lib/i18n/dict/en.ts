@@ -16,6 +16,7 @@ export const en = {
     ctaResearch: "Explore Research",
     ctaArticles: "Read Articles",
     ctaResearchResume: "Research CV",
+    ctaTranscript: "Academic Transcript",
     aboutKicker: "About",
     aboutTitle: "A pragmatic builder with a research mindset.",
     aboutBody:

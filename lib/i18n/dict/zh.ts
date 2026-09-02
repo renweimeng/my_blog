@@ -16,6 +16,7 @@ export const zh = {
     ctaResearch: "查看科研",
     ctaArticles: "阅读文章",
     ctaResearchResume: "科研简历",
+    ctaTranscript: "成绩证明",
     aboutKicker: "关于",
     aboutTitle: "研究导向的实践者，专注把复杂变清晰。",
     aboutBody:

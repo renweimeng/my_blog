@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FileText, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getSiteName } from "@/lib/seo/metadata";
 import type { Dictionary } from "@/lib/i18n/routing";
@@ -50,7 +51,18 @@ export function HomeHero({
                 target="_blank"
                 rel="noreferrer"
               >
+                <FileText className="size-4" />
                 {dict.home.ctaResearchResume}
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="border-white/70 bg-white/65 backdrop-blur hover:bg-white dark:border-white/20 dark:bg-white/10 dark:hover:bg-white/15">
+              <Link
+                href="/research/academic-transcript.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <GraduationCap className="size-4" />
+                {dict.home.ctaTranscript}
               </Link>
             </Button>
           </div>
