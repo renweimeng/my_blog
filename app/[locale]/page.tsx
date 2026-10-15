@@ -8,6 +8,7 @@ import { HomeEducation } from "@/components/sections/HomeEducation";
 import { HomeWhatIDo } from "@/components/sections/HomeWhatIDo";
 import { ResearchCard } from "@/components/cards/ResearchCard";
 import { ProjectCard } from "@/components/cards/ProjectCard";
+import { CortexProjectCard } from "@/components/cards/CortexProjectCard";
 import { ArticleCard } from "@/components/cards/ArticleCard";
 import { getAllResearch } from "@/lib/content/research";
 import { getAllProjects } from "@/lib/content/projects";
@@ -105,6 +106,7 @@ export default async function HomePage({
           viewAllHref={`/${resolvedLocale}/projects`}
           viewAllLabel={dict.actions.viewAll}
         >
+          <CortexProjectCard locale={resolvedLocale} />
           {projects.map((item) => (
             <ProjectCard key={item.slug} item={item} locale={resolvedLocale} />
           ))}

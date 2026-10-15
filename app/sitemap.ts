@@ -6,6 +6,7 @@ import { getAllProjects } from "@/lib/content/projects";
 import { getAllResearch } from "@/lib/content/research";
 import { getPeoplePath, getSectionDir } from "@/lib/content/paths";
 import { siteConfig } from "@/lib/seo/metadata";
+import { pageInfo as cortexPages } from "@/lib/cortex-loop/content";
 
 function getExistingMtime(filePath: string) {
   try {
@@ -37,6 +38,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
   locales.forEach((locale) => {
+    cortexPages.forEach((page) => {
+      const tail = page.id === "home" ? "" : `/${page.id}`;
+      entries.push({
+        url: new URL(`/${locale}/projects/cortex-loop${tail}`, siteConfig.url).toString(),
+        lastModified: getExistingMtime("components/cortex-loop/CortexApp.tsx") ?? now,
+        alternates: {
+          languages: Object.fromEntries(locales.map(lang => [lang, new URL(`/${lang}/projects/cortex-loop${tail}`, siteConfig.url).toString()])),
+        },
+      });
+    });
     staticRoutes.forEach((route) => {
       const lastModified =
         route === "" || route === "about" || route === "contact"

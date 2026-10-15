@@ -4,6 +4,7 @@ import { AigcEegProjectCard } from "@/components/cards/AigcEegProjectCard";
 import { DeepheckProjectCard } from "@/components/cards/DeepheckProjectCard";
 import { DiffScanAuthProjectCard } from "@/components/cards/DiffScanAuthProjectCard";
 import { GestureMusicProjectCard } from "@/components/cards/GestureMusicProjectCard";
+import { CortexProjectCard } from "@/components/cards/CortexProjectCard";
 import { InternshipSection } from "@/components/sections/InternshipSection";
 import { getAllProjects } from "@/lib/content/projects";
 import { getPerson } from "@/lib/content/people";
@@ -51,6 +52,7 @@ export default async function ProjectsPage({
         </p>
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <CortexProjectCard locale={resolvedLocale} />
         <DeepheckProjectCard locale={resolvedLocale} />
         <GestureMusicProjectCard locale={resolvedLocale} />
         <DiffScanAuthProjectCard />
