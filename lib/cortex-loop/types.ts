@@ -1,6 +1,7 @@
 export type CortexLocale = "zh" | "en";
 export type CortexPage =
   | "home"
+  | "overview"
   | "relay"
   | "loop"
   | "aesthetic"

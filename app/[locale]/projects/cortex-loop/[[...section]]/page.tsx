@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: Props) {
       title: `CORTEX — ${lang === "zh" ? (page?.zh ?? "人类认知过程蒸馏") : (page?.en ?? "Human cognitive distillation")}`,
       description:
         lang === "zh"
-          ? "交互探索人类认知过程蒸馏：RELAY 真实论文结果、可复现的人脑–AI 学习闭环、审美与空间实验、Agent 规划、交互理论和独立审计。"
-          : "Explore human cognitive process distillation through RELAY paper results, a reproducible human–AI learning loop, aesthetics, spatial intelligence, agent planning and interactive theory.",
+          ? "自动播放的认知实验现场：单被试合成 EEG、视觉测试题、空间频谱与事件响应同步可视化。保留 RELAY 论文结果、人脑–AI 学习闭环及全部研究展示。"
+          : "An autonomous cognition observatory with synthetic EEG, visual tasks, spectral analysis and event responses. Explore the original RELAY results and human–AI learning-loop exhibits.",
       locale: lang,
       path,
       image: "/cortex-loop/og-image.png",

@@ -10,6 +10,11 @@ model weights, external font service, or API key is required.
 
 ## Structure
 
+- `LiveExperiment.tsx` / `LiveEEG.tsx` / `LiveTask.tsx` / `LiveAnalytics.tsx`:
+  the default autonomous, single-participant observatory. The original landing
+  experience is retained at `/overview`, and every original exhibit remains.
+- `lib/cortex-loop/liveSimulation.ts`: deterministic EEG, six self-contained
+  task rules, trial stages, responses, spectral analysis and event history.
 - `CortexApp.tsx`: shell, navigation, persistent in-memory experiment, locale,
   fullscreen, reduced-motion preference and playback state.
 - `BrainScene.tsx` / `SpatialScene.tsx`: lazy-loaded Three.js scenes with SVG
@@ -50,6 +55,33 @@ or uncertain shadow updates never alter the deployed skill vector. JSON export
 includes these snapshots so mixed-parameter runs can be replayed.
 
 Run meaningful deterministic checks with `npm run test:cortex`.
+
+## Autonomous observatory
+
+The new entrance plays immediately and cycles through six 20-second cognitive
+tasks. One monotonic clock drives the stimulus, response, waveform, event markers
+and explanatory panels. Pause/resume, 1x–2x speed, skip, restart, channel selection,
+16/32-channel density, waveform gain and local JSON export are available. Skipped
+trials are excluded from completed-trial accuracy.
+
+EEG is synthetic, not recorded human data. Its seeded, continuously evaluated
+oscillations, colored noise, blink-like transients and event response templates
+are buffered at 160 Hz for display. The continuous generator can be sampled at
+1 kHz; the plots explicitly separate source and display rates. Spectral charts
+use a Hann-windowed 2-second Goertzel analysis of the actual generated channel;
+the scalp view interpolates the 250 ms channel RMS on schematic electrode
+positions. It is not anatomical source localization. Single-trial event responses
+are distinguished from response templates, not mislabeled as averaged ERP.
+Load, choice confidence, gaze and relational alignment are explicitly identified
+as illustrative task-linked variables, not validated cognitive decoding.
+
+Background tabs do not accumulate unseen trial time, and all animation frames
+are released when leaving this view. Lower-motion preferences reduce rendering
+cadence without preventing the requested automatic playback. Run
+`npm run test:cortex-live` for signal and task invariants.
+
+Background reading: [MNE-Python simulated raw data example](https://mne.tools/stable/auto_examples/simulation/simulate_raw_data.html).
+This browser generator is independent; it does not claim MNE's forward model.
 
 ## Assets and licenses
 

@@ -42,6 +42,9 @@ import { CortexContext } from "./CortexContext";
 import { HomeView } from "./HomeView";
 import "./cortex.css";
 
+const LiveExperiment = dynamic(() => import("./LiveExperiment"), {
+  loading: () => <div className="cl-loading">CORTEX / LIVE OBSERVATORY</div>,
+});
 const LoopLab = dynamic(() => import("./LoopLab"), {
   loading: () => <div className="cl-loading">CORTEX / LOOP LAB</div>,
 });
@@ -66,7 +69,7 @@ const subscribeMotion = (listener: () => void) => {
 const readMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const tourStops: { page: CortexPage; seconds: number }[] = [
-  { page: "home", seconds: 90 },
+  { page: "overview", seconds: 90 },
   { page: "relay", seconds: 180 },
   { page: "loop", seconds: 180 },
   { page: "aesthetic", seconds: 45 },
@@ -357,7 +360,7 @@ export function CortexApp({
 
   return (
     <CortexContext.Provider value={value}>
-      <div className={`cl-root ${reducedMotion ? "cl-reduced-motion" : ""}`}>
+      <div className={`cl-root ${page === "home" ? "cl-live-root" : ""} ${reducedMotion ? "cl-reduced-motion" : ""}`}>
         <a className="cl-skip" href="#cortex-content">
           {t("跳到内容", "Skip to content")}
         </a>
@@ -418,7 +421,7 @@ export function CortexApp({
                 setTourTime(0);
                 setTourPlaying(true);
                 setPlaying(false);
-                navigate("home");
+                navigate("overview");
               }}
             >
               <Presentation size={15} />
@@ -451,6 +454,7 @@ export function CortexApp({
               }
             >
               {fullscreen ? <Minimize size={17} /> : <Expand size={17} />}
+              {page === "home" && <span>{fullscreen ? t("退出全屏", "Exit fullscreen") : t("全屏", "Fullscreen")}</span>}
             </button>
             <button
               className="cl-mobile-menu cl-icon-button"
@@ -494,7 +498,8 @@ export function CortexApp({
         )}
         <div className="cl-scroll">
           <main id="cortex-content" className="cl-content">
-            {page === "home" && <HomeView />}
+            {page === "home" && <LiveExperiment />}
+            {page === "overview" && <HomeView />}
             {page === "loop" && <LoopLab />}
             {page === "relay" && <RelayView />}
             {["aesthetic", "space", "agent-world"].includes(page) && (

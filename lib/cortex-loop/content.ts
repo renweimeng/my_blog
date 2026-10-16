@@ -7,7 +7,8 @@ export const pageInfo: {
   short: string;
   group: "main" | "more";
 }[] = [
-  { id: "home", zh: "概览", en: "Overview", short: "00", group: "main" },
+  { id: "home", zh: "实时实验", en: "Live Lab", short: "LIVE", group: "main" },
+  { id: "overview", zh: "研究概览", en: "Overview", short: "00", group: "more" },
   { id: "relay", zh: "RELAY", en: "RELAY", short: "01", group: "main" },
   { id: "loop", zh: "闭环实验室", en: "Loop Lab", short: "02", group: "main" },
   { id: "aesthetic", zh: "审美", en: "Aesthetics", short: "03", group: "main" },

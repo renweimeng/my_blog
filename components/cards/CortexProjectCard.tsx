@@ -38,8 +38,8 @@ export function CortexProjectCard({ locale }: { locale: Locale }) {
         </h2>
         <p className="mt-3 text-sm leading-6 text-purple-100/75">
           {zh
-            ? "从人类的答案，走向答案形成之前的计算。交互探索 RELAY、脑–AI 学习闭环与下一代认知智能。"
-            : "Move upstream from human answers to the computation behind them. Explore RELAY, human–AI learning loops and cognitive intelligence."}
+            ? "进入自动运行的认知实验现场：单被试 EEG、实时测试题与可解释神经指标同步呈现。继续探索 RELAY 与脑–AI 学习闭环。"
+            : "Watch an autonomous cognition experiment: single-participant EEG, live tasks and explainable neural metrics. Explore RELAY and human–AI learning loops."}
         </p>
         <div className="mt-5 flex items-center justify-between border-t border-white/12 pt-4 text-xs text-amber-100/85">
           <span>
